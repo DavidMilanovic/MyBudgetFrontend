@@ -1,0 +1,46 @@
+<div class="transaction-form">
+    <h2>Create Transaction</h2>
+    <form [formGroup]="transactionForm">
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input id="description" type="text" formControlName="description" />
+        <small *ngIf="transactionForm.get('description')?.invalid && transactionForm.get('description')?.touched">
+          Description is required.
+        </small>
+      </div>
+  
+      <div class="form-group">
+        <label for="account">Account</label>
+        <select id="account" formControlName="accountId">
+          <option *ngFor="let account of accounts" [value]="account.id">{{ account.name }}</option>
+        </select>
+        <small *ngIf="transactionForm.get('accountId')?.invalid && transactionForm.get('accountId')?.touched">
+          Account is required.
+        </small>
+      </div>
+  
+      <div class="form-group">
+        <label for="currency">Currency</label>
+        <select id="currency" formControlName="currency">
+          <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
+        </select>
+        <small *ngIf="transactionForm.get('currency')?.invalid && transactionForm.get('currency')?.touched">
+          Currency is required.
+        </small>
+      </div>
+  
+      <div class="form-group">
+        <label for="amount">Amount</label>
+        <input id="amount" type="number" formControlName="amount" />
+        <small *ngIf="transactionForm.get('amount')?.invalid && transactionForm.get('amount')?.touched">
+          Amount is required and must be at least 0.01.
+        </small>
+      </div>
+  
+      <div class="form-actions">
+        <button type="button" (click)="close()">Cancel</button>
+        <button type="button" (click)="save()">Save</button>
+      </div>
+    </form>
+  </div>
+  

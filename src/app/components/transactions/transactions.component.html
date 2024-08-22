@@ -1,0 +1,17 @@
+<div class="transactions-layout">
+    <div class="transactions-content">
+        @for (transaction of transactions; track transaction.id) 
+        {
+            <app-transaction [transaction]="transaction"/>
+            <mat-divider/>
+        }
+        @empty {
+            <div>
+                <h1>There are no transactions available currently!</h1>
+            </div>
+        }
+    </div>
+
+    <!-- <button class="accounts-button" mat-stroked-button> All accounts</button> -->
+    
+</div>

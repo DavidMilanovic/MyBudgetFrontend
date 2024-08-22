@@ -1,0 +1,14 @@
+<div class="account-layout">
+    <div>
+        @for (account of accounts; track account.id) {
+             <app-account [account]="account"/>
+             <mat-divider/>
+         }
+         @empty {
+            <div>
+                <h1> There are no accounts!</h1>
+            </div>
+         }
+         <button mat-stroked-button (click)="openDialog()">Add Account</button>
+    </div>
+</div>

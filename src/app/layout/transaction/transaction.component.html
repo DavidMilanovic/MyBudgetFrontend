@@ -1,0 +1,9 @@
+<div class="transaction-content">
+  <div>
+    <h3>{{ transaction.description }}</h3>
+    <small>{{ transaction.accountName }}</small>
+  </div>
+  <div>
+    <h3>{{ transaction.amount | currency:transaction.currency.toUpperCase() }}</h3>
+  </div>
+</div>

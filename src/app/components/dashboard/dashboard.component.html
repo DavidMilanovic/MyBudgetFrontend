@@ -1,0 +1,23 @@
+<div class="settings-layout">
+  <div class="content-layout">
+    <div class="internal-elements">
+      <p>Default value</p>
+      <button mat-button [matMenuTriggerFor]="menu">{{defaultCurrency}}</button>
+      <mat-menu #menu="matMenu">
+        @for (currency of currencies; track $index) {
+          <button mat-menu-item (click)="updateDefaultCurrency(currency)">{{currency.toUpperCase()}}</button>
+        }
+      </mat-menu>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="internal-elements">
+       <button mat-fab extended (click)="openDialog('200ms','200ms')">Delete all data<mat-icon>delete</mat-icon></button>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="internal-elements">
+        <p>Exchange rate updated: </p>
+        <p>{{exchangeDate | date}}</p>
+    </div>
+  </div>
+</div>
+

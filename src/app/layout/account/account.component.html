@@ -1,0 +1,10 @@
+<div class="account-content">
+  <div>
+    <h3>{{ account.name }}</h3>
+  </div>
+  <div>
+    <h3>{{ account.balance | currency: account.currency:'symbol':'1.2-2'}}</h3>
+    @if (defaultCurrency != account.currency.toUpperCase()) {
+    <small>{{amount | currency: defaultCurrency.toUpperCase():'symbol':'1.2-2'}}</small>
+    }
+</div>

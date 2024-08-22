@@ -1,0 +1,6 @@
+<app-navbar/>
+<div class="main-content">
+  <router-outlet (activate)="onActivate($event)"></router-outlet>
+</div>
+<mat-divider/>
+<app-footer [isDashboarLoaded]="isDashboardLoaded"/>

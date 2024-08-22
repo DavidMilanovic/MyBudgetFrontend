@@ -1,0 +1,47 @@
+<div class="account-form">
+    <h2>Create Account</h2>
+    <form [formGroup]="accountForm">
+
+      <div class="form-group">
+        <label for="name">Account Name</label>
+        <input id="name" type="text" formControlName="name" />
+        <div *ngIf="accountForm.get('name')?.invalid && accountForm.get('name')?.touched">
+          <small *ngIf="accountForm.get('name')?.hasError('required')">
+            Account Name is required.
+          </small>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="currency">Currency</label>
+        <select id="currency" formControlName="currency">
+          <option *ngFor="let currency of currencies" [value]="currency.toUpperCase()">{{ currency.toUpperCase() }}</option>
+        </select>
+        <div *ngIf="accountForm.get('currency')?.invalid && accountForm.get('currency')?.touched">
+          <small *ngIf="accountForm.get('currency')?.hasError('required')">
+            Currency is required.
+          </small>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="balance">Balance</label>
+        <input id="balance" type="number" formControlName="balance" />
+        <div *ngIf="accountForm.get('balance')?.invalid && accountForm.get('balance')?.touched">
+          <small *ngIf="accountForm.get('balance')?.hasError('required')">
+            Balance is required.
+          </small>
+          <small *ngIf="accountForm.get('balance')?.hasError('min')">
+            Balance must be at least 0.
+          </small>
+        </div>
+      </div>
+  
+    
+      <div class="form-actions">
+        <button type="button" (click)="close()">Cancel</button>
+        <button type="button" (click)="save()">Save</button>
+      </div>
+    </form>
+  </div>
+  

@@ -1,0 +1,11 @@
+.transactions-layout{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 80vh;
+}
+
+
+.accounts-button{
+    margin-top: 20px;
+}

@@ -1,0 +1,13 @@
+@if (isDashboarLoaded) {
+<div class="dashboard-footer">
+    <h6>Copyright #2024</h6>
+</div>
+}
+@else {
+    <div>
+        <div class="footer">
+            <button mat-stroked-button (click)="openTransactionDialog()">New Transaction</button>
+            <h3>Available money:  {{ availableMoney | currency: defaultCurrency:'symbol':'1.2-2' }}</h3>
+        </div>
+    </div>
+}

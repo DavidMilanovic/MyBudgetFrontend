@@ -1,0 +1,28 @@
+.settings-layout {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 75vh; 
+    padding: 20px; 
+  }
+  
+  .content-layout {
+    width: 100%;
+    max-width: 600px; 
+    padding: 20px; 
+    box-shadow: 0 6px 11px rgba(0,0,0,0.1); 
+    border-radius: 12px; 
+    background-color: #EEEEEE; 
+  }
+  
+  .internal-elements {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px; 
+  }
+  
+  mat-divider {
+    margin: 10px 0; 
+  }
+  
